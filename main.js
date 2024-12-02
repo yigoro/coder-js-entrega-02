@@ -1,4 +1,4 @@
-function getUsers() {
+document.getElementById("button").addEventListener("click", function getUsers() {
   fetch("https://randomuser.me/api?results=10")
     .then((response) => response.json())
     .then((data) => {
@@ -17,12 +17,13 @@ function getUsers() {
       });
 
       document.getElementById("user-data").innerHTML = usersInfo;
+
     })
     .catch((error) => {
       console.error("Error al obtener los datos de los usuarios", error);
       document.getElementById("user-data").innerText = "Falló la carga de usuarios.";
     });
-}
 
-getUsers();
+    
+  })
 
