@@ -129,16 +129,33 @@ h1{
     }
 
 }
+
+/* Alinear el botón en el centro tanto horizontal como vertical */
 .button {
-    background-color: #04AA6D; /* Green */
-    border: none;
-    color: white;
-    padding: 16px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    transition-duration: 0.4s;
-    cursor: pointer;
+    display: block;               /* Hace que el botón se comporte como un bloque */
+    margin: 0 auto;               /* Centra el botón horizontalmente */
+    padding: 10px 20px;           /* Espaciado dentro del botón */
+    background-color: #4CAF50;    /* Color de fondo */
+    color: white;                 /* Color del texto */
+    border: none;                 /* Quitar borde */
+    border-radius: 5px;           /* Bordes redondeados */
+    font-size: 16px;              /* Tamaño de fuente */
+
   }
+  
+  /* Centrar el contenedor (si se necesita) */
+  .container {
+    display: flex;
+    justify-content: center;      /* Centra horizontalmente */
+    align-items: center;          /* Centra verticalmente */
+    height: 100vh;                /* Usa toda la altura de la ventana */
+  }
+
+  /* Estilo para el botón deshabilitado */
+.button:disabled {
+    background-color: #cccccc;  /* Color de fondo gris */
+    color: #666666;             /* Color de texto gris */
+    cursor: not-allowed;        /* Cambia el cursor a un círculo con barra */
+  }
+  
+  
