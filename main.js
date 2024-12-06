@@ -57,7 +57,9 @@ document.getElementById("Generar").addEventListener("click", function getUsers()
                 <div class="usuario">
                     <h3>Nombre: ${el.name}</h3>
                     <p>Edad: ${el.age}</p>
-                    <button class="botonesEliminar">X</button>
+                    <img src="${el.photo}" alt="User Picture">
+
+                    <button class="button">Eliminar</button>
                 </div>
         `
     })
