@@ -55,8 +55,8 @@ document.getElementById("Generar").addEventListener("click", function getUsers()
     listaUsuariosAgregados.forEach(el => {
       usuariosCarrito.innerHTML += `
                 <div class="usuario">
-                    <h3>Nombre: ${name}</h3>
-                    <p>Edad: ${age}</p>
+                    <h3>Nombre: ${el.name}</h3>
+                    <p>Edad: ${el.age}</p>
                     <button class="botonesEliminar">X</button>
                 </div>
         `
