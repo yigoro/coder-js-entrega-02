@@ -1,3 +1,12 @@
+
+//Esto hace que se despliegue el menú lateral
+document.getElementById("carritoIcon").addEventListener("click", ()=>{
+  document.getElementById("carrito").classList.toggle("active")
+})
+
+const Carrito = JSON.parse(localStorage.getItem("carrito")) || []
+
+
 document.getElementById("Generar").addEventListener("click", function getUsers() {
   fetch("https://randomuser.me/api?results=10")
     .then((response) => response.json())
@@ -14,10 +23,10 @@ document.getElementById("Generar").addEventListener("click", function getUsers()
             <p><strong>Edad:</strong> ${user.dob.age}</p>
             <img src="${user.picture.large}" alt="User Picture">
             <button class="button" onclick ="agregar(this, '${user.id.value}', '${user.name.first}', '${user.picture.large}', ${user.dob.age})">Agregar</button>
-          </div>
-        `;
+            </div>
+        `;  
       });
-
+    
       document.getElementById("user-data").innerHTML = usersInfo;
 
     })
@@ -42,8 +51,15 @@ document.getElementById("Generar").addEventListener("click", function getUsers()
     button.disabled = true
     document.getElementById("items").innerHTML = listaUsuariosAgregados.length
 
+    usuariosCarrito.innerHTML = ""
+    listaUsuariosAgregados.forEach(el => {
+      usuariosCarrito.innerHTML += `
+                <div class="usuario">
+                    <h3>Nombre: ${name}</h3>
+                    <p>Edad: ${age}</p>
+                    <button class="botonesEliminar">X</button>
+                </div>
+        `
+    })
 
   }
-
-
-
